@@ -73,51 +73,162 @@
         <li class="nav-item"><a class="nav-link" href="{{ asset('index.html') }}">
             <svg class="nav-icon">
               <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-speedometer') }}"></use>
-            </svg> Dashboard<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
-        <li class="nav-title">Theme</li>
+            </svg> Homepage</a></li>
+
+        <!-- <li class="nav-title">Administration</li>
         <li class="nav-item"><a class="nav-link" href="{{ asset('colors.html') }}">
             <svg class="nav-icon">
               <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-drop') }}"></use>
-            </svg> Colors</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ asset('typography.html') }}">
+            </svg> User Types</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('colors.html') }}">
+            <svg class="nav-icon">
+              <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-drop') }}"></use>
+            </svg> Users</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('colors.html') }}">
+            <svg class="nav-icon">
+              <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-drop') }}"></use>
+            </svg> Grant Permission to User</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('colors.html') }}">
+            <svg class="nav-icon">
+              <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-drop') }}"></use>
+            </svg> Change Password</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('colors.html') }}">
+            <svg class="nav-icon">
+              <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-drop') }}"></use>
+            </svg> Initialize Password</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('colors.html') }}">
+            <svg class="nav-icon">
+              <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-drop') }}"></use>
+            </svg> Control Panel</a></li> -->
+        <!-- <li class="nav-item"><a class="nav-link" href="{{ asset('typography.html') }}">
             <svg class="nav-icon">
               <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-pencil') }}"></use>
-            </svg> Typography</a></li>
-        <li class="nav-title">Components</li>
+            </svg> Typography</a></li> -->
+
+            <!-- Administration -->
+
+
+        <li class="nav-title">Administration</li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="{{ asset('#') }}">
             <svg class="nav-icon">
               <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-puzzle') }}"></use>
-            </svg> Base</a>
+            </svg> Administration</a>
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/accordion.html') }}"><span class="nav-icon"></span> Accordion</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/breadcrumb.html') }}"><span class="nav-icon"></span> Breadcrumb</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/cards.html') }}"><span class="nav-icon"></span> Cards</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/carousel.html') }}"><span class="nav-icon"></span> Carousel</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/collapse.html') }}"><span class="nav-icon"></span> Collapse</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/list-group.html') }}"><span class="nav-icon"></span> List group</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/navs.html') }}"><span class="nav-icon"></span> Navs</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/pagination.html') }}"><span class="nav-icon"></span> Pagination</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/placeholders.html') }}"><span class="nav-icon"></span> Placeholders</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/popovers.html') }}"><span class="nav-icon"></span> Popovers</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/progress.html') }}"><span class="nav-icon"></span> Progress</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/scrollspy.html') }}"><span class="nav-icon"></span> Scrollspy</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/spinners.html') }}"><span class="nav-icon"></span> Spinners</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/tables.html') }}"><span class="nav-icon"></span> Tables</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/tabs.html') }}"><span class="nav-icon"></span> Tabs</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/tooltips.html') }}"><span class="nav-icon"></span> Tooltips</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/accordion.html') }}"><span class="nav-icon"></span> User Types</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/breadcrumb.html') }}"><span class="nav-icon"></span> Users</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/cards.html') }}"><span class="nav-icon"></span> Grant Permission to User</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/carousel.html') }}"><span class="nav-icon"></span> Change Password</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/collapse.html') }}"><span class="nav-icon"></span> Initialize Password</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/list-group.html') }}"><span class="nav-icon"></span> Control Panel</a></li>
           </ul>
         </li>
+
+
+      <!-- Set Access -->
+
+      <li class="nav-title">Set Access</li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="{{ asset('#') }}">
+            <svg class="nav-icon">
+              <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-settings') }}"></use>
+            </svg> Set Access</a>
+          <ul class="nav-group-items">
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/accordion.html') }}"><span class="nav-icon"></span> Set Access Punjab Level</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/breadcrumb.html') }}"><span class="nav-icon"></span> Set Access Institute Level</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/cards.html') }}"><span class="nav-icon"></span> Set Session Accessr</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/carousel.html') }}"><span class="nav-icon"></span> Set Colleges Login Status</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/collapse.html') }}"><span class="nav-icon"></span> Initialize Password</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/list-group.html') }}"><span class="nav-icon"></span> Set Auto Attendance</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/list-group.html') }}"><span class="nav-icon"></span> Enter Strength</a></li>
+
+          </ul>
+        </li>
+
+      <!-- File Maintenance -->
+
+
+      <li class="nav-title">File Maintenance</li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="{{ asset('#') }}">
+            <svg class="nav-icon">
+              <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-file') }}"></use>
+            </svg> File Maintenance</a>
+          <ul class="nav-group-items">
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/accordion.html') }}"><span class="nav-icon"></span> Group/Shift Codes</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/breadcrumb.html') }}"><span class="nav-icon"></span> Centre Group</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/cards.html') }}"><span class="nav-icon"></span> Centre Codes</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/carousel.html') }}"><span class="nav-icon"></span> Qualification Codes</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/collapse.html') }}"><span class="nav-icon"></span> Trade Codes</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/list-group.html') }}"><span class="nav-icon"></span> Exam Title</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/list-group.html') }}"><span class="nav-icon"></span> Create Master/Year File</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/accordion.html') }}"><span class="nav-icon"></span> Create Session File</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/breadcrumb.html') }}"><span class="nav-icon"></span> Edit Session Dates</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/cards.html') }}"><span class="nav-icon"></span> Close Session</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/carousel.html') }}"><span class="nav-icon"></span> Set Age Limit</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/collapse.html') }}"><span class="nav-icon"></span> Set Registration No.</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/list-group.html') }}"><span class="nav-icon"></span> Set Central Trades</a></li>
+
+          </ul>
+        </li>
+
+        <!-- Data Processing -->
+
+        <li class="nav-title">Data Processing</li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="{{ asset('#') }}">
+            <svg class="nav-icon">
+              <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-bell') }}"></use>
+            </svg> Data Processing</a>
+          <ul class="nav-group-items">
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/accordion.html') }}"><span class="nav-icon"></span> tStudents Information</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/breadcrumb.html') }}"><span class="nav-icon"></span> Submit Students Info </a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/cards.html') }}"><span class="nav-icon"></span> Import Data to Session File</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/carousel.html') }}"><span class="nav-icon"></span> Rejected/Duplicate Students Info</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/collapse.html') }}"><span class="nav-icon"></span> Generate Registration Numbers </a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/list-group.html') }}"><span class="nav-icon"></span> Enter Students Attendance</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/list-group.html') }}"><span class="nav-icon"></span> Enter Students Result</a></li>
+          </ul>
+        </li>
+
+
+        <!-- Reports  -->
+
+        <li class="nav-title">Reports</li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="{{ asset('#') }}">
+            <svg class="nav-icon">
+              <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-notes') }}"></use>
+            </svg> Reports</a>
+          <ul class="nav-group-items">
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/accordion.html') }}"><span class="nav-icon"></span> Editing Data List</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/breadcrumb.html') }}"><span class="nav-icon"></span> Admittance Slip</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/cards.html') }}"><span class="nav-icon"></span> Attendance Sheet</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/carousel.html') }}"><span class="nav-icon"></span> Award List</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/collapse.html') }}"><span class="nav-icon"></span> Result Statement</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/list-group.html') }}"><span class="nav-icon"></span> Centre/Tradewise Summary</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/list-group.html') }}"><span class="nav-icon"></span> Print Certificates</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/accordion.html') }}"><span class="nav-icon"></span> Rejected Student's List</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/breadcrumb.html') }}"><span class="nav-icon"></span> List of Non Eligible Students</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/cards.html') }}"><span class="nav-icon"></span> Strength Summary</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/carousel.html') }}"><span class="nav-icon"></span> Session History Statistical Report</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/collapse.html') }}"><span class="nav-icon"></span> Periodic Report</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/list-group.html') }}"><span class="nav-icon"></span> Registration Alloted Report</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/list-group.html') }}"><span class="nav-icon"></span> Pictures List of Students</a></li>
+
+
+          </ul>
+        </li>
+
+      <!-- Backup -->
+      <li class="nav-title">Backup</li>
+
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="{{ asset('#') }}">
             <svg class="nav-icon">
               <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-cursor') }}"></use>
-            </svg> Buttons</a>
+            </svg> Backup</a>
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="{{ asset('buttons/buttons.html') }}"><span class="nav-icon"></span> Buttons</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('buttons/button-group.html') }}"><span class="nav-icon"></span> Buttons Group</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('buttons/dropdowns.html') }}"><span class="nav-icon"></span> Dropdowns</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('buttons/buttons.html') }}"><span class="nav-icon"></span> Backup of Session File</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('buttons/button-group.html') }}"><span class="nav-icon"></span> Backup of other Files</a></li>
           </ul>
         </li>
-        <li class="nav-item"><a class="nav-link" href="{{ asset('charts.html') }}">
+
+        <!-- <li class="nav-item"><a class="nav-link" href="{{ asset('charts.html') }}">
             <svg class="nav-icon">
               <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-chart-pie') }}"></use>
             </svg> Charts</a></li>
@@ -195,7 +306,7 @@
               <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-layers') }}"></use>
             </svg> Try CoreUI
             <div class="fw-semibold">PRO</div>
-          </a></li>
+          </a></li> -->
       </ul>
       <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
     </div>
@@ -215,7 +326,7 @@
             <!-- <li class="nav-item"><a class="nav-link" href="{{ asset('#') }}">Users</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ asset('#') }}">Settings</a></li> -->
           </ul>
-          <ul class="header-nav ms-auto">
+          <!-- <ul class="header-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="{{ asset('#') }}">
                 <svg class="icon icon-lg">
                   <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-bell') }}"></use>
@@ -228,47 +339,16 @@
                 <svg class="icon icon-lg">
                   <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-envelope-open') }}"></use>
                 </svg></a></li>
-          </ul>
+          </ul> -->
           <ul class="header-nav ms-3">
             <li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="{{ asset('#') }}" role="button" aria-haspopup="true" aria-expanded="false">
-                <div class="avatar avatar-md"><img class="avatar-img" src="{{ asset('assets/img/avatars/8.jpg') }}" alt="user@email.com"></div>
+                <div class="avatar avatar-md"><img class="avatar-img" src="{{ asset('assets/img/avatars/user.jpg') }}" alt="user@email.com"></div>
               </a>
               <div class="dropdown-menu dropdown-menu-end pt-0">
                 <div class="dropdown-header bg-light py-2">
                   <div class="fw-semibold">Account</div>
                 </div><a class="dropdown-item" href="{{ asset('#') }}">
-                  <svg class="icon me-2">
-                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-bell') }}"></use>
-                  </svg> Updates<span class="badge badge-sm bg-info ms-2">42</span></a><a class="dropdown-item" href="{{ asset('#') }}">
-                  <svg class="icon me-2">
-                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-envelope-open') }}"></use>
-                  </svg> Messages<span class="badge badge-sm bg-success ms-2">42</span></a><a class="dropdown-item" href="{{ asset('#') }}">
-                  <svg class="icon me-2">
-                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-task') }}"></use>
-                  </svg> Tasks<span class="badge badge-sm bg-danger ms-2">42</span></a><a class="dropdown-item" href="{{ asset('#') }}">
-                  <svg class="icon me-2">
-                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-comment-square') }}"></use>
-                  </svg> Comments<span class="badge badge-sm bg-warning ms-2">42</span></a>
-                <div class="dropdown-header bg-light py-2">
-                  <div class="fw-semibold">Settings</div>
-                </div><a class="dropdown-item" href="{{ asset('#') }}">
-                  <svg class="icon me-2">
-                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-user') }}"></use>
-                  </svg> Profile</a><a class="dropdown-item" href="{{ asset('#') }}">
-                  <svg class="icon me-2">
-                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-settings') }}"></use>
-                  </svg> Settings</a><a class="dropdown-item" href="{{ asset('#') }}">
-                  <svg class="icon me-2">
-                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-credit-card') }}"></use>
-                  </svg> Payments<span class="badge badge-sm bg-secondary ms-2">42</span></a><a class="dropdown-item" href="{{ asset('#') }}">
-                  <svg class="icon me-2">
-                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-file') }}"></use>
-                  </svg> Projects<span class="badge badge-sm bg-primary ms-2">42</span></a>
-                <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ asset('#') }}">
-                  <svg class="icon me-2">
-                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-lock-locked') }}"></use>
-                  </svg> Lock Account</a><a class="dropdown-item" href="{{ asset('#') }}">
-                  <svg class="icon me-2">
+                  
                     <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-account-logout') }}"></use>
                   </svg> Logout</a>
               </div>
