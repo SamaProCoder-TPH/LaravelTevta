@@ -358,10 +358,10 @@
         
         <!-- CONTENT HERE -->
         @yield('content')
-      <footer class="footer">
+      <!-- <footer class="footer">
         <div><a href="">CoreUI </a><a href="">Bootstrap Admin Template</a> © 2021 creativeLabs.</div>
         <div class="ms-auto">Powered by&nbsp;<a href="">CoreUI UI Components</a></div>
-      </footer>
+      </footer> -->
     </div>
     <!-- CoreUI and necessary plugins-->
     <script src="{{ asset('vendors/@coreui/coreui/js/coreui.bundle.min.js') }}"></script>
