@@ -21,13 +21,18 @@ class RoleController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function roleForm()
     {
-        return view('home');
+        return view('role.role');
     }
 
     public function homepage()
     {
         return view('Dashboard');
+    }
+
+    public function addRole(Request $request)
+    {
+        dd($request);
     }
 }
