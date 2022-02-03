@@ -61,7 +61,7 @@
 
       <div class="col-md-6">
         <label class="form-label" for="user_id">User ID</label>
-        <input name="email" class="form-control @error('user_id') is-invalid @enderror" value="{{ old('user_id') }}" required autocomplete="user_id" autofocus id="user_id" type="text">
+        <input name="user_id" class="form-control @error('user_id') is-invalid @enderror" value="{{ old('user_id') }}" required autocomplete="user_id" autofocus id="user_id" type="text">
         @error('user_id')
         <span class="invalid-feedback" role="alert">
           <strong>{{ $message }}</strong>
