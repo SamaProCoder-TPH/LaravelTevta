@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\PermissionRegistrar;
 
 
 class RoleController extends Controller
@@ -49,5 +52,25 @@ class RoleController extends Controller
         
 
         dd($role1);
+    }
+
+
+    public function createPermissions()
+    {
+        $permission = Permission::create(['name' => 'File Module']);
+        $permission = Permission::create(['name' => 'Data Module']);
+        $permission = Permission::create(['name' => 'Reports Module']);
+        $permission = Permission::create(['name' => 'Backup Module']);
+
+
+
+        // $user->givePermissionTo('edit articles');
+
+        // // You can also give multiple permission at once
+        // $user->givePermissionTo('edit articles', 'delete articles');
+
+        // // You may also pass an array
+        // $user->givePermissionTo(['edit articles', 'delete articles']);
+
     }
 }

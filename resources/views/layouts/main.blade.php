@@ -16,7 +16,9 @@
     <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
     <meta name="author" content="Łukasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- <title>CoreUI Free Bootstrap Admin Template</title>
+   -->
+   <title>Short Courses Examination System - @yield('title')</title>
     <!-- {{ asset('js/angular_my.js')}} -->
     <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('assets/favicon/apple-icon-57x57.png') }}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('assets/favicon/apple-icon-60x60.png') }}">
@@ -45,6 +47,7 @@
     <link href="{{ asset('css/examples.css') }}" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+    <link rel="stylesheet" href="{{ asset('js/jquery.dataTables.min.css') }}">
     <script>
       window.dataLayer = window.dataLayer || [];
 
@@ -347,9 +350,13 @@
               <div class="dropdown-menu dropdown-menu-end pt-0">
                 <div class="dropdown-header bg-light py-2">
                   <div class="fw-semibold">Account</div>
-                </div><a class="dropdown-item" href="{{ asset('#') }}">
+                </div><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                   
                     <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-account-logout') }}"></use>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                   </svg> Logout</a>
               </div>
             </li>
@@ -364,6 +371,9 @@
       </footer> -->
     </div>
     <!-- CoreUI and necessary plugins-->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script src="{{ asset('vendors/@coreui/coreui/js/coreui.bundle.min.js') }}"></script>
     <script src="{{ asset('vendors/simplebar/js/simplebar.min.js') }}"></script>
     <!-- We use those scripts to show code examples, you should remove them in your application.-->
@@ -377,6 +387,11 @@
     <script src="{{ asset('vendors/@coreui/utils/js/coreui-utils.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
     <script>
+    </script>
+    
+    
+    <script>
+      @yield('javascript')
     </script>
 
   </body>

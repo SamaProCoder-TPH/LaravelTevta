@@ -29,7 +29,9 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/userslist';
+
 
     /**
      * Create a new controller instance.
@@ -38,7 +40,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        // $this->middleware('guest');
     }
 
     /**
@@ -58,8 +60,7 @@ class RegisterController extends Controller
             'last_name' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'max:255'],
             'role' => ['required', 'string', 'max:255'],
-            'status' => ['required', 'string', 'max:255'],
-            'code' => ['required', 'string', 'max:255','unique:users'],
+            'username' => ['required', 'string', 'max:255','unique:users'],
         ]);
     }
 
@@ -71,15 +72,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $data['status'] = isset($data['status']) ? 'active' : 'inactive';
+        $data['password'] = "123123123";
+        // dd($data);
         return User::create([
-            'email' => $data['email'],
+            'username' => $data['username'],
             'password' => Hash::make($data['password']),
-            'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
-            'phone' => $data['phone'],
-            'username' => $data['code'],
-            'role' => $data['name'],
-            'status' => $data['name'],
+            'role' => $data['role'],
+            'firstname' => $data['first_name'],
+            'lastname' => $data['last_name'],
+            'email' => $data['email'],
+            'phonenumber' => $data['phone'],
+            'status' => $data['status'],
         ]);
     }
 }
