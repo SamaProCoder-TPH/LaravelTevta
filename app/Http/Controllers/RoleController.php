@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
 
 class RoleController extends Controller
 {
@@ -33,6 +35,19 @@ class RoleController extends Controller
 
     public function addRole(Request $request)
     {
-        dd($request);
+
+        $this->validate($request, [
+            'role_name' => ['required', 'string', 'max:255'],
+        ]);
+      
+        if($request->has('role_name'))
+        {
+            $name = $request->role_name;
+            dd($name);
+            $role1 = Role::create(['name' => $name]);
+        }
+        
+
+        dd($role1);
     }
 }

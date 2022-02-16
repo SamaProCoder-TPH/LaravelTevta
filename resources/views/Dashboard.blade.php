@@ -108,6 +108,7 @@
           <input class="form-check-input" id="status" type="checkbox">
           <label class="form-check-label" for="status">Active/InActive</label>
         </div>
+
       </div>
       <div class="col-12">
         <button class="btn btn-primary" type="submit">Sign in</button>
@@ -116,4 +117,5 @@
     <!-- </div> -->
   </div>
 </div> 
+
 @endsection

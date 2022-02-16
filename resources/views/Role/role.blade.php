@@ -22,10 +22,10 @@
                 <input class="form-control @error('role_name') is-invalid @enderror" id="role_name" type="text" name="role_name">
             </div>
             @error('role_name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $role_name }}</strong>
-                                    </span>
-                                @enderror
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
             <div class="col-12">
                 <button class="btn btn-primary" type="submit">Add Role</button>
             </div>
