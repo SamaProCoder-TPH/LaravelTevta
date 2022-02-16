@@ -25,3 +25,7 @@ Route::get('/homepage', [App\Http\Controllers\HomeController::class, 'homepage']
 // Roles
 Route::post('/roles', [App\Http\Controllers\RoleController::class, 'addRole'])->name('addRole');
 Route::get('/roles', [App\Http\Controllers\RoleController::class, 'roleForm'])->name('roleForm');
+//Set Access
+
+Route::get('/access-punjab-level', [App\Http\Controllers\SetAccessPunjabLevelController::class, 'AccessPunjabLevel'])->name('punjabLevel');
+Route::post('/access_punjab', [App\Http\Controllers\SetAccessPunjabLevelController::class, 'access_punjab'])->name('access_punjab');
