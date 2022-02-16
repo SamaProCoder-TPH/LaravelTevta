@@ -128,7 +128,7 @@
 
 
       <!-- Set Access -->
-
+      
       <li class="nav-title">Set Access</li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="{{ asset('#') }}">
             <svg class="nav-icon">
@@ -148,7 +148,7 @@
 
       <!-- File Maintenance -->
 
-
+      @can('File Module')
       <li class="nav-title">File Maintenance</li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="{{ asset('#') }}">
             <svg class="nav-icon">
@@ -171,16 +171,16 @@
 
           </ul>
         </li>
-
+      @endcan
         <!-- Data Processing -->
-
+        @can('Data Module')
         <li class="nav-title">Data Processing</li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="{{ asset('#') }}">
             <svg class="nav-icon">
               <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-bell') }}"></use>
             </svg> Data Processing</a>
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/accordion.html') }}"><span class="nav-icon"></span> tStudents Information</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/accordion.html') }}"><span class="nav-icon"></span> Students Information</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ asset('base/breadcrumb.html') }}"><span class="nav-icon"></span> Submit Students Info </a></li>
             <li class="nav-item"><a class="nav-link" href="{{ asset('base/cards.html') }}"><span class="nav-icon"></span> Import Data to Session File</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ asset('base/carousel.html') }}"><span class="nav-icon"></span> Rejected/Duplicate Students Info</a></li>
@@ -189,10 +189,10 @@
             <li class="nav-item"><a class="nav-link" href="{{ asset('base/list-group.html') }}"><span class="nav-icon"></span> Enter Students Result</a></li>
           </ul>
         </li>
-
+        @endcan
 
         <!-- Reports  -->
-
+        @can('Reports Module')
         <li class="nav-title">Reports</li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="{{ asset('#') }}">
             <svg class="nav-icon">
@@ -217,8 +217,9 @@
 
           </ul>
         </li>
-
+      @endcan
       <!-- Backup -->
+      @can('Backup Module')
       <li class="nav-title">Backup</li>
 
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="{{ asset('#') }}">
@@ -230,7 +231,7 @@
             <li class="nav-item"><a class="nav-link" href="{{ asset('buttons/button-group.html') }}"><span class="nav-icon"></span> Backup of other Files</a></li>
           </ul>
         </li>
-
+        @endcan
         <!-- <li class="nav-item"><a class="nav-link" href="{{ asset('charts.html') }}">
             <svg class="nav-icon">
               <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-chart-pie') }}"></use>
