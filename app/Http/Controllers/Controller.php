@@ -9,6 +9,7 @@ use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\PermissionRegistrar;
 use Illuminate\Routing\Controller as BaseController;
+use \Crypt;
 
 class Controller extends BaseController
 {

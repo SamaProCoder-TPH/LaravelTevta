@@ -18,8 +18,45 @@
 <div class="body flex-grow-1 px-3">
   <div class="container-lg">
     <!-- <div class="row"> -->
+    <div class="body flex-grow-1 px-3">
+        <div class="container-lg">
+          <div class="card mb-4">
+            <div class="card-header">Add User</div>
+            <div class="card-body">
       <form class="row g-3" method="POST" action="{{ route('register') }}">
        @csrf
+       <div class="col-md-6">
+        <label class="form-label" for="username">User ID</label>
+        <input name="username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" required autocomplete="username" autofocus id="username" type="text">
+        @error('username')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" for="password">Password</label>
+        <input name="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password') }}" required autocomplete="new-password" autofocus  id="password" type="password">
+        @error('password')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" for="role">User Type</label>
+        <select name="role" class="form-select @error('role') is-invalid @enderror" required id="role">
+          <option selected>Choose...</option>
+          <option>Administrator</option>
+          <option>Board</option>
+          <option>Institute</option>
+        </select>
+         @error('role')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+      </div>
 
        <div class="col-md-6">
         <label class="form-label" for="first_name">First Name</label>
@@ -40,16 +77,6 @@
         @enderror
       </div>
       <div class="col-md-6">
-        <label class="form-label" for="phone">Phone Number</label>
-        <input name="phone" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}" required autocomplete="phone" autofocus id="phone" type="tel">
-        @error('phone')
-        <span class="invalid-feedback" role="alert">
-          <strong>{{ $message }}</strong>
-        </span>
-        @enderror
-      </div>
-
-      <div class="col-md-6">
         <label class="form-label" for="email">Email</label>
         <input name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" required autocomplete="email" autofocus  id="email" type="email">
         @error('email')
@@ -60,52 +87,20 @@
       </div>
 
       <div class="col-md-6">
-        <label class="form-label" for="user_id">User ID</label>
-        <input name="email" class="form-control @error('user_id') is-invalid @enderror" value="{{ old('user_id') }}" required autocomplete="user_id" autofocus id="user_id" type="text">
-        @error('user_id')
+        <label class="form-label" for="phone">Telephone</label>
+        <input name="phone" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}" required autocomplete="phone" autofocus id="phone" type="tel">
+        @error('phone')
         <span class="invalid-feedback" role="alert">
           <strong>{{ $message }}</strong>
         </span>
         @enderror
       </div>
-      <div class="col-md-6">
-        <label class="form-label" for="password">Password</label>
-        <input name="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password') }}" required autocomplete="new-password" autofocus  id="password" type="password">
-        @error('password')
-        <span class="invalid-feedback" role="alert">
-          <strong>{{ $message }}</strong>
-        </span>
-        @enderror
-      </div>
-
+      
 
       <div class="col-md-6">
-        <label class="form-label" for="code">Code</label>
-        <input name="code" class="form-control @error('code') is-invalid @enderror" value="{{ old('name') }}" required autocomplete="code" autofocus  id="code" type="text">
-        @error('code')
-        <span class="invalid-feedback" role="alert">
-          <strong>{{ $message }}</strong>
-        </span>
-        @enderror
-      </div>
-      <div class="col-md-4">
-        <label class="form-label" for="role">User Type</label>
-        <select name="role" class="form-select @error('role') is-invalid @enderror" required id="role">
-          <option selected>Choose...</option>
-          <option>Administrator</option>
-          <option>Board</option>
-          <option>Institute</option>
-        </select>
-         @error('role')
-        <span class="invalid-feedback" role="alert">
-          <strong>{{ $message }}</strong>
-        </span>
-        @enderror
-      </div>
-
-      <div class="col-12">
+      <label class="form-label" for="phone"></label>
         <div class="form-check">
-          <input class="form-check-input" id="status" type="checkbox" name="status">
+          <input class="form-check-input" id="status" type="checkbox" name="status" value="active">
           <label class="form-check-label" for="status">Active/InActive</label>
         </div>
       </div>
@@ -113,6 +108,10 @@
         <button class="btn btn-primary" type="submit">Sign in</button>
       </div>
     </form>
+       
+    </div>
+        </div>
+    </div>
     <!-- </div> -->
   </div>
 </div> 
