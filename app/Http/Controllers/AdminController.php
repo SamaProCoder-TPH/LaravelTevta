@@ -32,7 +32,6 @@ class AdminController extends Controller
      */
     public function editUser($userid)
     {
-        
         $userid_org = \Crypt::decrypt($userid); 
         $user = User::find($userid_org);
         // dd($user);

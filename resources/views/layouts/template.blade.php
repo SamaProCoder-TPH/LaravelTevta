@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+@section('title', '')
 @section('content')
 <div class="header-divider"></div>
 <div class="container-fluid">

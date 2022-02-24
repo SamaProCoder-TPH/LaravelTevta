@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+@section('title', 'Edit User')
 @section('content')
 <div class="header-divider"></div>
 <div class="container-fluid">
@@ -35,13 +35,16 @@
         @enderror
       </div>
       <input type="hidden" name="id" value="{{$user->id}}">
+      @php
+      $roles = \Spatie\Permission\Models\Role::all();
+      @endphp
       <div class="col-md-6">
         <label class="form-label" for="role">User Type</label>
         <select name="role" class="form-select @error('role') is-invalid @enderror" required id="role">
           <option >Choose...</option>
-          <option {{ ( $user->role == 'Administrator') ? 'selected' : '' }} >Administrator</option>
-          <option {{ ( $user->role == 'Board') ? 'selected' : '' }}>Board</option>
-          <option {{ ( $user->role == 'Institute') ? 'selected' : '' }}>Institute</option>
+          @foreach($roles as $role)
+          <option {{ ( $user->role == $role->name) ? 'selected' : '' }} >{{$role->name}}</option>
+          @endforeach
         </select>
          @error('role')
         <span class="invalid-feedback" role="alert">

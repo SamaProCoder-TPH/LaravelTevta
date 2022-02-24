@@ -25,6 +25,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'homepage']);
 
 // Roles
+Route::get('/allRoles', [App\Http\Controllers\RoleController::class, 'getAllRoles'])->name('getAllRoles');
 Route::post('/roles', [App\Http\Controllers\RoleController::class, 'addRole'])->name('addRole');
 Route::get('/roles', [App\Http\Controllers\RoleController::class, 'roleForm'])->name('roleForm');
 Route::get('/permissions', [App\Http\Controllers\RoleController::class, 'createPermissions'])->name('createPermissions');
@@ -37,6 +38,15 @@ Route::get('/editUser/{id}', [App\Http\Controllers\AdminController::class, 'edit
 Route::post('/updateUser', [App\Http\Controllers\AdminController::class, 'updateUser'])->name('updateUser');
 Route::get('/initializePassword', [App\Http\Controllers\AdminController::class, 'initializePassword'])->name('initializePassword');
 Route::post('/initializePassword', [App\Http\Controllers\AdminController::class, 'initializePasswordSave'])->name('initializePasswordSave');
+
+
+// File Maintainance
+Route::get('/newsession', [App\Http\Controllers\FileController::class, 'newSession'])->name('newSession');
+Route::get('/closesession', [App\Http\Controllers\FileController::class, 'closeSession'])->name('closeSession');
+
+// Data Processing Module
+Route::get('/enteryear', [App\Http\Controllers\DataController::class, 'enterYear'])->name('enterYear');
+Route::get('/studentDetail', [App\Http\Controllers\DataController::class, 'enterStudentDetails'])->name('enterStudentDetails');
 
 
 

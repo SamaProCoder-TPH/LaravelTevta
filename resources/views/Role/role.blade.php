@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+@section('title', 'Add User Type')
 @section('content')
 <div class="header-divider"></div>
         <div class="container-fluid">
@@ -13,7 +13,24 @@
           </nav>
         </div>
       </header>
+
+
+      <div class="body flex-grow-1 px-3">
+  <div class="container-lg"> 
+    
+    @if(Session::has('RoleAdded'))
+        <div class="alert {{ Session::get('alert-class', 'alert-info') }} alert-dismissible fade show" role="alert">
+          <div class="fw-semibold"> {{ Session::get('RoleAdded') }} </div>
+          <button class="btn-close" type="button" data-coreui-dismiss="alert" aria-label="Close"></button>
+        </div>
+          @endif
+    <!-- <div class="row"> -->
     <div class="body flex-grow-1 px-3">
+        <div class="container-lg">
+          <div class="card mb-4">
+            <div class="card-header">Add User Type</div>
+            <div class="card-body">
+            <div class="body flex-grow-1 px-3">
         <div class="container-lg">
           <form class="row g-3" method="POST" action="{{ route('addRole')}}">
             @csrf
@@ -32,4 +49,9 @@
             </form>
         </div>
     </div> 
+            </div>
+        </div>
+    </div>
+
+    
 @endsection

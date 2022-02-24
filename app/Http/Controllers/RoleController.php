@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\PermissionRegistrar;
+use Session;
 
 
 class RoleController extends Controller
@@ -31,9 +32,11 @@ class RoleController extends Controller
         return view('role.role');
     }
 
-    public function homepage()
+    public function getAllRoles()
     {
-        return view('Dashboard');
+        $roles = \Spatie\Permission\Models\Role::all();
+        return view ('role.allroles',compact('roles'))->with('no', 1);;
+       
     }
 
     public function addRole(Request $request)
@@ -46,12 +49,13 @@ class RoleController extends Controller
         if($request->has('role_name'))
         {
             $name = $request->role_name;
-            dd($name);
             $role1 = Role::create(['name' => $name]);
         }
         
-
-        dd($role1);
+        $msg = "User Type has been added.";
+        Session::flash('RoleAdded', $msg);
+        Session::flash('alert-class', 'alert-success'); 
+        return back();
     }
 
 
