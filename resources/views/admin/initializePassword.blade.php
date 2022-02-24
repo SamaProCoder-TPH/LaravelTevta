@@ -20,7 +20,11 @@
     <!-- <div class="row"> -->
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
+        @if(Session::has('invalidUsername'))
+          <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('invalidUsername') }}</p>
+          @endif
           <div class="card mb-4">
+          
             <div class="card-header">Initialize Password</div>
             <div class="card-body">
             <form class="row g-3" method="POST" action="{{ route('initializePasswordSave') }}">
@@ -75,4 +79,15 @@
     <!-- </div> -->
   </div>
 </div> 
+
+
+@endsection
+@section('javascript')
+@if(Session::has('message'))
+Swal.fire(
+  'Password Changed!',
+  '{{ Session::get('message') }}',
+  'success'
+)
+@endif
 @endsection

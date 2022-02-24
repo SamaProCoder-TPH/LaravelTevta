@@ -36,7 +36,7 @@ Route::get('/userslist', [App\Http\Controllers\AdminController::class, 'index'])
 Route::get('/editUser/{id}', [App\Http\Controllers\AdminController::class, 'editUser'])->name('editUser');
 Route::post('/updateUser', [App\Http\Controllers\AdminController::class, 'updateUser'])->name('updateUser');
 Route::get('/initializePassword', [App\Http\Controllers\AdminController::class, 'initializePassword'])->name('initializePassword');
-Route::post('/initializePasswordSave', [App\Http\Controllers\AdminController::class, 'initializePasswordSave'])->name('initializePasswordSave');
+Route::post('/initializePassword', [App\Http\Controllers\AdminController::class, 'initializePasswordSave'])->name('initializePasswordSave');
 
 
 

@@ -387,6 +387,8 @@
     <script src="{{ asset('vendors/@coreui/chartjs/js/coreui-chartjs.js') }}"></script>
     <script src="{{ asset('vendors/@coreui/utils/js/coreui-utils.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script> -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
     </script>
     

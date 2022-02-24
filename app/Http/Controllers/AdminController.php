@@ -7,6 +7,8 @@ use App\Models\User;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\PermissionRegistrar;
+use Illuminate\Support\Facades\Hash;
+use Session;
 
 
 class AdminController extends Controller
@@ -164,12 +166,36 @@ class AdminController extends Controller
      */
     public function initializePassword()
     {
-        return view('admin.initializePassword');
+        
+        return view('admin.initializePassword')->with('message','Password is changed    ');
     }
 
     public function initializePasswordSave(Request $request)
     {
-        dd($request->all());
+        $request->validate([
+            'username' => ['required', 'string', 'max:255'],
+            'password' => ['required', 'string', 'max:255','confirmed'],
+        ]);
+        
+
+        $user = User::where('username',$request->username)->get();
+        // dd(sizeof($user));
+        if(sizeof($user) == 0){
+            $msg = "Invalid Username.";
+            Session::flash('invalidUsername', $msg);
+            // Session::flash('message', ''.$request->username.' Password Changed!'); 
+            Session::flash('alert-class', 'alert-danger'); 
+            return back();
+        }else{
+            // dd('here');
+            User::where('username',$request->username)->update(
+                [
+                    'password' => Hash::make($request->password)
+                ]
+            );
+        }
+        Session::flash('message', ''.$request->username.' Password Changed!'); 
+        Session::flash('alert-class', 'alert-success'); 
         return view('admin.initializePassword');
     }
 }
