@@ -8,7 +8,7 @@
         </svg>
       </div>
       <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
-        <li class="nav-item"><a class="nav-link" href="{{ asset('index.html') }}">
+        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">
             <svg class="nav-icon">
               <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-speedometer') }}"></use>
             </svg> Dashboard<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>

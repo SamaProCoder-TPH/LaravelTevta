@@ -6,9 +6,9 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb my-0 ms-2">
       <li class="breadcrumb-item">
-        <!-- if breadcrumb is single--><span>Home</span>
+        <!-- if breadcrumb is single--><span>User</span>
       </li>
-      <li class="breadcrumb-item active"><span>Dashboard</span></li>
+      <li class="breadcrumb-item active"><span>Add</span></li>
     </ol>
   </nav>
 </div>
@@ -108,7 +108,9 @@
         </div>
       </div>
       <div class="col-12">
-        <button class="btn btn-primary" type="submit">Sign in</button>
+        <button class="btn btn-primary" type="submit">OK</button>
+        <button class="btn btn-primary" type="reset">Reset</button>
+
       </div>
     </form>
        

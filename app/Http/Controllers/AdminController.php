@@ -118,7 +118,8 @@ class AdminController extends Controller
                 'status' => $request->status,
             ]
         );
-
+        Session::flash('message','Settings Updated Successfully!'); 
+        Session::flash('alert-class', 'alert-success'); 
         return redirect()->back();
         dd($request->all());
     }

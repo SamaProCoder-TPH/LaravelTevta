@@ -17,11 +17,14 @@
 
 <div class="body flex-grow-1 px-3">
   <div class="container-lg">
+  @if(Session::has('message'))
+          <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+          @endif
     <!-- <div class="row"> -->
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
           <div class="card mb-4">
-            <div class="card-header">Edit User</div>
+            <div class="card-header">Assign Permission to User</div>
             <div class="card-body">
       <form class="row g-3" method="POST" action="{{ route('updateUser') }}">
        @csrf
@@ -93,43 +96,33 @@
       
 
       <div class="col-md-6">
-      <label class="form-label" for="phone"></label>
         <div class="form-check">
           <input {{ ( $user->status == 'active') ? 'checked' : '' }} class="form-check-input" id="status" type="checkbox" name="status" value="active">
           <label class="form-check-label" for="status">Active/InActive</label>
         </div>
       </div>
+      
       <p> <u> <strong> Permission to User </strong></u></p>
-      <hr>
 
       <div class="col-md-12">
-      <label class="form-label" for="file"></label>
         <div class="form-check">
           <label class="form-check-label" for="status">File Maintenance Module</label>
           <input {{ ( $user->can('File Module'))  ? 'checked' : '' }} class="form-check-input" id="status" type="checkbox" name="file_module" value="active">
         </div>
-      </div>
-      <div class="col-md-12">
-      <label class="form-label" for="phone"></label>
         <div class="form-check">
           <label class="form-check-label" for="status">Data Processing Module</label>
           <input {{ ( $user->can('Data Module'))  ? 'checked' : '' }} class="form-check-input" id="status" type="checkbox" name="data_module" value="active">
         </div>
-      </div>
-      <div class="col-md-12">
-      <label class="form-label" for="phone"></label>
         <div class="form-check">
           <label class="form-check-label" for="status">Reports Module</label>
           <input {{ ( $user->can('Reports Module')) ? 'checked' : '' }} class="form-check-input" id="status" type="checkbox" name="report_module" value="active">
         </div>
-      </div>
-      <div class="col-md-12">
-      <label class="form-label" for="phone"></label>
         <div class="form-check">
           <label class="form-check-label" for="status">Backup Module </label>
           <input {{ ( $user->can('Backup Module'))  ? 'checked' : '' }} class="form-check-input" id="status" type="checkbox" name="backup_module" value="active">
         </div>
       </div>
+   
       <div class="col-12">
         <button class="btn btn-primary" type="submit">OK</button>
       </div>

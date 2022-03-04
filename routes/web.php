@@ -48,6 +48,9 @@ Route::get('/closesession', [App\Http\Controllers\FileController::class, 'closeS
 Route::get('/enteryear', [App\Http\Controllers\DataController::class, 'enterYear'])->name('enterYear');
 Route::get('/studentDetail', [App\Http\Controllers\DataController::class, 'enterStudentDetails'])->name('enterStudentDetails');
 
+//Set  Access Module
 
 
 
+Route::view('/punjabAccess', 'access_module.setPunjabLevelAccess');
+Route::view('/sessionAccess', 'access_module.setSessionLevelAccess');

@@ -8,7 +8,7 @@
       <li class="breadcrumb-item">
         <!-- if breadcrumb is single--><span>Home</span>
       </li>
-      <li class="breadcrumb-item active"><span>User List</span></li>
+      <li class="breadcrumb-item active"><span>User</span></li>
     </ol>
   </nav>
 </div>
@@ -21,7 +21,8 @@
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
           <div class="card mb-4">
-            <div class="card-header">List of Users</div>
+            <div class="card-header">List of Users <a href="{{ route('register') }}" class="btn btn-info" style="float:right;">Add User</a></div>
+
             <div class="card-body">
 
             <table id="example" class="table striped" >

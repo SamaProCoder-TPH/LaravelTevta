@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-<!--
-* CoreUI - Free Bootstrap Admin Template
-* @version v4.1.0
-* @link https://coreui.io
-* Copyright (c) 2021 creativeLabs Łukasz Holeczek
-* Licensed under MIT (https://coreui.io/license)
--->
+
 <!-- Breadcrumb-->
 <html lang="en">
   <head>
@@ -64,14 +58,9 @@
   </head>
   <body>
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
-      <!-- <div class="sidebar-brand d-none d-md-flex">
-        <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-          <use xlink:href="{{ asset('assets/brand/coreui.svg#full') }}"></use>
-        </svg>
-        <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
-          <use xlink:href="{{ asset('assets/brand/coreui.svg#signet') }}"></use>
-        </svg>
-      </div> -->
+      <div class="sidebar-brand d-none d-md-flex">
+        <h3>TEVTA</h3>
+      </div>
       <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
         <li class="nav-item"><a class="nav-link" href="{{ asset('index.html') }}">
             <svg class="nav-icon">
@@ -118,10 +107,10 @@
             </svg> Administration</a>
           <ul class="nav-group-items">
             <li class="nav-item"><a class="nav-link" href="{{ asset('base/accordion.html') }}"><span class="nav-icon"></span> User Types</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/breadcrumb.html') }}"><span class="nav-icon"></span> Users</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('userslist') }}"><span class="nav-icon"></span> Users</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ asset('base/cards.html') }}"><span class="nav-icon"></span> Grant Permission to User</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ asset('base/carousel.html') }}"><span class="nav-icon"></span> Change Password</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/collapse.html') }}"><span class="nav-icon"></span> Initialize Password</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('initializePassword') }}"><span class="nav-icon"></span> Initialize Password</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ asset('base/list-group.html') }}"><span class="nav-icon"></span> Control Panel</a></li>
           </ul>
         </li>
@@ -137,9 +126,8 @@
           <ul class="nav-group-items">
             <li class="nav-item"><a class="nav-link" href="{{ asset('base/accordion.html') }}"><span class="nav-icon"></span> Set Access Punjab Level</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ asset('base/breadcrumb.html') }}"><span class="nav-icon"></span> Set Access Institute Level</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/cards.html') }}"><span class="nav-icon"></span> Set Session Accessr</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ asset('base/cards.html') }}"><span class="nav-icon"></span> Set Session Access</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ asset('base/carousel.html') }}"><span class="nav-icon"></span> Set Colleges Login Status</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/collapse.html') }}"><span class="nav-icon"></span> Initialize Password</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ asset('base/list-group.html') }}"><span class="nav-icon"></span> Set Auto Attendance</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ asset('base/list-group.html') }}"><span class="nav-icon"></span> Enter Strength</a></li>
 
