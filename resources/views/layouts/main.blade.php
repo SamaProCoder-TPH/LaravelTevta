@@ -42,6 +42,14 @@
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
     <link rel="stylesheet" href="{{ asset('js/jquery.dataTables.min.css') }}">
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+
+    <link rel="stylesheet" type="text/css" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
 
@@ -106,10 +114,10 @@
               <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-puzzle') }}"></use>
             </svg> Administration</a>
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/accordion.html') }}"><span class="nav-icon"></span> User Types</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('getAllRoles') }}"><span class="nav-icon"></span> User Types</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('userslist') }}"><span class="nav-icon"></span> Users</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/cards.html') }}"><span class="nav-icon"></span> Grant Permission to User</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ asset('base/carousel.html') }}"><span class="nav-icon"></span> Change Password</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('userslistboard') }}"><span class="nav-icon"></span> Grant Permission to User</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('changePassword') }}"><span class="nav-icon"></span> Change Password</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('initializePassword') }}"><span class="nav-icon"></span> Initialize Password</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ asset('base/list-group.html') }}"><span class="nav-icon"></span> Control Panel</a></li>
           </ul>
@@ -334,15 +342,21 @@
           </ul> -->
           <ul class="header-nav ms-3">
             <li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="{{ asset('#') }}" role="button" aria-haspopup="true" aria-expanded="false">
-                <div class="avatar avatar-md"><img class="avatar-img" src="{{ asset('assets/img/avatars/user.jpg') }}" alt="user@email.com"></div>
+                <div class="avatar avatar-md">
+                  <img class="avatar-img" src="{{ asset('assets/img/avatars/user.jpg') }}" alt="user@email.com">
+              </div>
+                
               </a>
               <div class="dropdown-menu dropdown-menu-end pt-0">
                 <div class="dropdown-header bg-light py-2">
-                  <div class="fw-semibold">Account</div>
+                  <div class="fw-semibold">Account: <b>{{ ucfirst(Auth::user()->username)  }}</b></div>
+
                 </div><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                   
-                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-account-logout') }}"></use>
+                    <svg class="icon me-2">
+                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
+                    </svg>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
@@ -361,7 +375,6 @@
     </div>
     <!-- CoreUI and necessary plugins-->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script src="{{ asset('vendors/@coreui/coreui/js/coreui.bundle.min.js') }}"></script>
     <script src="{{ asset('vendors/simplebar/js/simplebar.min.js') }}"></script>
@@ -377,8 +390,45 @@
     <script src="{{ asset('js/main.js') }}"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script> -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-    </script>
+
+<script>
+  @if(Session::has('message'))
+  toastr.options =
+  {
+  	"closeButton" : true,
+  	"progressBar" : true
+  }
+  		toastr.success("{{ session('message') }}");
+  @endif
+
+  @if(Session::has('error'))
+  toastr.options =
+  {
+  	"closeButton" : true,
+  	"progressBar" : true
+  }
+  		toastr.error("{{ session('error') }}");
+  @endif
+
+  @if(Session::has('info'))
+  toastr.options =
+  {
+  	"closeButton" : true,
+  	"progressBar" : true
+  }
+  		toastr.info("{{ session('info') }}");
+  @endif
+
+  @if(Session::has('warning'))
+  toastr.options =
+  {
+  	"closeButton" : true,
+  	"progressBar" : true
+  }
+  		toastr.warning("{{ session('warning') }}");
+  @endif
+</script>
+
     
     
     <script>

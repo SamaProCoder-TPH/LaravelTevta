@@ -55,7 +55,7 @@ class RoleController extends Controller
         $msg = "User Type has been added.";
         Session::flash('RoleAdded', $msg);
         Session::flash('alert-class', 'alert-success'); 
-        return back();
+        return redirect()->back()->with('message','New Role Added');
     }
 
 

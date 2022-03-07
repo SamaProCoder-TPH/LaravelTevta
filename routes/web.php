@@ -34,10 +34,13 @@ Route::get('/permissions', [App\Http\Controllers\RoleController::class, 'createP
 
 // Administration route
 Route::get('/userslist', [App\Http\Controllers\AdminController::class, 'index'])->name('userslist');
+Route::get('/userslistboard', [App\Http\Controllers\AdminController::class, 'userslistboard'])->name('userslistboard');
+
 Route::get('/editUser/{id}', [App\Http\Controllers\AdminController::class, 'editUser'])->name('editUser');
 Route::post('/updateUser', [App\Http\Controllers\AdminController::class, 'updateUser'])->name('updateUser');
 Route::get('/initializePassword', [App\Http\Controllers\AdminController::class, 'initializePassword'])->name('initializePassword');
 Route::post('/initializePassword', [App\Http\Controllers\AdminController::class, 'initializePasswordSave'])->name('initializePasswordSave');
+Route::get('/changePassword', [App\Http\Controllers\AdminController::class, 'changePassword'])->name('changePassword');
 
 
 // File Maintainance
@@ -54,3 +57,12 @@ Route::get('/studentDetail', [App\Http\Controllers\DataController::class, 'enter
 
 Route::view('/punjabAccess', 'access_module.setPunjabLevelAccess');
 Route::view('/sessionAccess', 'access_module.setSessionLevelAccess');
+
+
+// Delete Selected
+Route::post('/deleteSelected', [App\Http\Controllers\ManageController::class, 'deleteSelected'])->name('deleteSelected');
+
+
+// Change Status
+Route::get('/changeStatusUser', [App\Http\Controllers\ManageController::class, 'changeStatusUser'])->name('changeStatusUser');
+Route::get('/changeStatusRole', [App\Http\Controllers\ManageController::class, 'changeStatusRole'])->name('changeStatusRole');

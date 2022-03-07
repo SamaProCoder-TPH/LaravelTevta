@@ -13,6 +13,15 @@ use Session;
 
 class AdminController extends Controller
 {
+      /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -24,6 +33,14 @@ class AdminController extends Controller
         $user = User::all();
         return view('admin.userslist',compact('user'))->with('no', 1);
     }
+
+    public function userslistboard()
+    {
+        $user = User::where('role','Board')->get();
+      
+        return view('admin.userslist',compact('user'))->with('no', 1);
+    }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -157,7 +174,10 @@ class AdminController extends Controller
     {
         //
     }
-
+    public function changePassword()
+    {
+        return view('admin.changePassword');
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -166,9 +186,9 @@ class AdminController extends Controller
      */
     public function initializePassword()
     {
-        
-        return view('admin.initializePassword')->with('message','Password is changed    ');
+        return view('admin.initializePassword');
     }
+    
 
     public function initializePasswordSave(Request $request)
     {
@@ -177,7 +197,7 @@ class AdminController extends Controller
             'password' => ['required', 'string', 'max:255','confirmed'],
         ]);
         
-
+        // dd($request->all());
         $user = User::where('username',$request->username)->get();
         // dd(sizeof($user));
         if(sizeof($user) == 0){
@@ -196,6 +216,6 @@ class AdminController extends Controller
         }
         Session::flash('message', ''.$request->username.' Password Changed!'); 
         Session::flash('alert-class', 'alert-success'); 
-        return view('admin.initializePassword');
+        return redirect()->back()->with('message','Password Changed Successfully');
     }
 }

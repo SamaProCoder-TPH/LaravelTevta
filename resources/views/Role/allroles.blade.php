@@ -21,7 +21,7 @@
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
           <div class="card mb-4">
-            <div class="card-header">List of User Types</div>
+            <div class="card-header">List of User Types  <a href="{{ route('addRole') }}" class="btn btn-secondary" style="float:right;">Add Role</a></div>
             <div class="card-body">
 
             <table id="example" class="table striped" >
@@ -37,7 +37,7 @@
                   <tr>
                     <td>{{ $no++ }}</td>
                     <td>{{ $role->name}}</td>
-                    <td><input type="checkbox" id="checkbox" name="checkbox" /></td>
+                    <td><input data-id="{{$role->id}}" class="changeStatus" type="checkbox" id="checkbox" name="checkbox" {{ $role->status == 'Active' ? 'checked' : '' }} /></td>
 
                   </tr>
                   @endforeach
@@ -60,5 +60,23 @@
       $('#example').DataTable();
   } );
 
+
+  $(function() {
+    $('.changeStatus').change(function() {
+        var status = $(this).prop('checked') == true ? 'Active' : 'Inactive'; 
+        var role_id = $(this).data('id'); 
+         
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: '/changeStatusRole',
+            data: {'status': status, 'role_id': role_id},
+            success: function(data){
+              console.log(data.success)
+              toastr.info("Status changed Successfully");
+            }
+        });
+    })
+  })
 @endsection
 

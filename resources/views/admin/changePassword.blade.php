@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Initialize Password')
+@section('title', 'Change Password')
 @section('content')
 <div class="header-divider"></div>
 <div class="container-fluid">
@@ -8,7 +8,7 @@
       <li class="breadcrumb-item">
         <!-- if breadcrumb is single--><span>Home</span>
       </li>
-      <li class="breadcrumb-item active"><span>Initialize Password</span></li>
+      <li class="breadcrumb-item active"><span>Change Password</span></li>
     </ol>
   </nav>
 </div>
@@ -25,36 +25,13 @@
           @endif
           <div class="card mb-4">
           
-            <div class="card-header">Initialize Password</div>
+            <div class="card-header">Change Password</div>
             <div class="card-body">
             <form class="row g-3" method="POST" action="{{ route('initializePasswordSave') }}">
                 @csrf
 
-                <div class="col-md-6">
-                    <!-- <label class="form-label" for="username">User name</label>
-                    <input  name="username" class="form-control @error('username') is-invalid @enderror" value="{{ $user->username ?? old('username') }}" required autocomplete="username" autofocus id="username" type="text"> -->
-                    <label for="username">Select User</label>
-                    <select name="username" id="username" class="form-control">
-                      <option value="" selected disabled>----- Select User ----</option>
-
-                      @foreach ((App\Models\User::where('status','active')->get()) as $user)
-                        <option value="{{ $user->username }}">{{ $user->username }}</option>
-                      @endforeach
-
-                    </select>
-                   
-                    @error('username')
-                    <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
-
-
-                <div class="col-md-6">
-                    
-                </div>
-
+      
+                    <input type="hidden" name="username" value="{{ Auth::user()->username }}">
                 <div class="col-md-6">
                     <label class="form-label" for="password">Password</label>
                     <input name="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password') }}" required autocomplete="new-password" autofocus  id="password" type="password">
@@ -96,9 +73,7 @@
 
 @endsection
 @section('javascript')
-$(document).ready(function() {
-    $('#username').select2();
-});
+
 
 @if(Session::has('message'))
 Swal.fire(

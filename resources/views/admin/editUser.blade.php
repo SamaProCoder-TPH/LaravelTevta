@@ -39,7 +39,7 @@
       </div>
       <input type="hidden" name="id" value="{{$user->id}}">
       @php
-      $roles = \Spatie\Permission\Models\Role::all();
+      $roles = \Spatie\Permission\Models\Role::where('status','Active')->get();
       @endphp
       <div class="col-md-6">
         <label class="form-label" for="role">User Type</label>
