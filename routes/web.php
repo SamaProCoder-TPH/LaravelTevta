@@ -55,8 +55,8 @@ Route::get('/studentDetail', [App\Http\Controllers\DataController::class, 'enter
 
 
 
-Route::view('/punjabAccess', 'access_module.setPunjabLevelAccess');
-Route::view('/sessionAccess', 'access_module.setSessionLevelAccess');
+Route::view('/punjabAccess', 'access_module.setPunjabLevelAccess')->name('punjabAccess');
+Route::view('/sessionAccess', 'access_module.setSessionLevelAccess')->name('sessionAccess');
 
 
 // Delete Selected
